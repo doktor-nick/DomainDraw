@@ -1,0 +1,6 @@
+BAA88685&Choline/Carnitine o-acyltransferase&172:763&F&#ADD8E6&PF00755&PFAM&Y&772&http://www.sanger.ac.uk/cgi-bin/Pfam/getacc?PF00755
+BAA88685&E set domains&9:63&S&#CD2626&81296&SCOP&Y&772&http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=81296
+BAA88685&CoA-dependent acyltransferases&168:542&S&#CD6889&52777&SCOP&Y&772&http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=52777
+BAA88685&CoA-dependent acyltransferases&544:766&S&#CD6889&52777&SCOP&Y&772&http://scop.mrc-lmb.cam.ac.uk/scop/search.cgi?key=52777
+BAA88685&N-myristoylation site 1&160&T&#CD3333&NULL&MOP&G&400&
+

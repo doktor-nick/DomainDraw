@@ -1,0 +1,138 @@
+DomainDraw Install Guide
+------------------------
+If you find DomainDraw useful in your research, please reference
+the publication listed below.
+
+Prerequisites:
+--------------
+
+DomainDraw requires The GNU Image Manipulation Program (GIMP) to be
+installed. GIMP is available for Unix and other platforms and may
+be downloaded from www.gimp.org.
+
+DomainDraw has been tested using:
+ GIMP 1.2.3  under RedHat linux 9.0
+ GIMP 2.2.0  with Fedora Core 4 linux. 
+ GIMP 2.2.14 with Fedora Core 10 linux (using the GIMP rpms from Fedora Core 7)
+ GIMP 2.4.7  with Fedora Core 10 linux (using the GIMP rpms from Fedora Core 8)
+
+Please contact the authors if you experience difficulties.
+
+Installing:
+-----------
+GIMP needs to be installed. Version 2.0, 2.2 or 2.4 is recommended.
+
+NOTE: DomainDraw will not work with GIMP 2.6 since this version 
+of GIMP does not support gimp-perl.
+
+The GIMP development libraries should also be installed.If you are
+installing via rpms, these will typically be called:
+ gimp, gimp-libs and gimp-devel.   
+ 
+Some perl modules are required. See the "What you need" section of 
+  http://gimp.org/tutorials/Basic_Perl/
+for required modules. Basically you need to install:
+  Perl 5.005 or later
+  The GTK2 perl module  (http://gtk2-perl.sourceforge.net)
+  The Gimp perl module (ftp://ftp.gimp.org/pub/gimp/plug-ins/)
+
+NOTE: the 2.2 version of the gimp perl module will work with
+both GIMP 2.2 and GIMP 2.4 (ftp://ftp.gimp.org/pub/gimp/plug-ins/v2.2/perl/)
+
+The above modules are also available from cpan.org, or maybe available
+already in/for your linux distribution. The perl modules may
+require other modules to be installed depending on your distribution.
+These can also be found a cpan.
+
+Once GIMP and the above perl modules have been installed,
+Copy the script domain.pl into the GIMP plug-ins directory.
+On unix systems this will usually be a subdirectory of your
+home directory of the form
+ ~yourhomedir/.gimp-X.Y/plug-ins/
+where X.Y is the version of GIMP being used. This directory is
+automatically created the first time GIMP is run.
+
+Make sure the domain.pl file has executable permissions.
+
+Running DomainDraw:
+-------------------
+
+1. Run GIMP.
+
+2. On the Xtns/Perl-Fu menu select DomainDraw. A pop-up window will
+   appear.
+
+3. Enter the name of the file containing the domain information into
+   the Batchfile box. Either give the complete path to the file, or
+   if the file is in the same directory from which you started GIMP
+   just the file name may be given.
+
+   The format of the input file is explained fully 
+   on the DomainDraw website at:
+    http://domaindraw.imb.uq.edu.au/
+   An example file dd_example2.txt is in this distribution. 
+
+4. Alter other input parameters as required. Defaults should
+   be fine for most purposes.
+
+5. Click OK.
+
+Parameters:
+-----------
+Are described on the DomainDraw website:
+ http://domaindraw.imb.uq.edu.au/ 
+and in the paper listed below.
+
+Using a GIMP command line usage and server:
+-------------------------------------------
+
+The GIMP supports image generation from the command line
+without the need to start up a user interface. For instance
+executing:
+
+./domain.pl -batchfile dd_example2.txt -o dd_example2.png
+
+with take the domain information supplied in the file
+dd_example2.txt and generate the image dd_example2.png
+
+GIMP may also be run as a server. The script domain.pl can then be run
+as a command line script which communicates with the GIMP server.
+The advantage of this is that graphics may then be generated "on the
+fly" without user interaction, and without starting up GIMP for each
+image generated. An example of this may be found at
+the web interface to DomainDraw given below. The disadvantage is that 
+setting up GIMP server can be complicated for new users. 
+
+If you chose to set up a GIMP server, you will need to
+1. Read the documentation on the GIMP web site on server configuration
+   http://gimp.org/tutorials/Basic_Perl/
+2. Modify the domain.pl script so that line 29
+    $ENV{'GIMP_HOST'} = 'pwd@localhost';
+   is no longer commented out, and change pwd@localhost as required.
+
+
+Common Problems:
+----------------
+Finding fonts can sometimes cause difficulties. Try selecting a common 
+font like Times 12 point.
+
+DomainDraw Authors:
+-------------------
+Nick Hamilton (n.hamilton@imb.uq.edu.au)
+Lynn Fink (l.fink@imb.uq.edu.au)
+
+Reference:
+----------
+DomainDraw: A macromolecular feature drawing program. 
+J. Lynn Fink and Nicholas Hamilton
+In Silico Biology 7, 0014, 2007.
+
+Web Interface:
+--------------
+http://domaindraw.imb.uq.edu.au
+
+Licence:
+--------
+DomainDraw is released under any version of the GNU Public Licences (GPL)
+that the end user cares to use.
+It comes with no warranty.
